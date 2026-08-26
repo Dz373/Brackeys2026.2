@@ -150,8 +150,8 @@ Transform:
   m_Children:
   - {fileID: 430034238}
   - {fileID: 702660060}
-  - {fileID: 1431270079}
   - {fileID: 1370868728}
+  - {fileID: 1431270079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430034237
@@ -330,9 +330,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpPower: 250
+  jumpPower: 300
+  onGround: 0
   respawnPoint: {x: 0, y: 0}
   rb: {fileID: 430034239}
+  traps: {fileID: 1370868727}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -789,13 +791,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger
       objectReference: {fileID: 0}
-    - target: {fileID: 6042965497318566629, guid: f577702190186044d9a1d96f02539551, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 119
-      objectReference: {fileID: 0}
-    - target: {fileID: 6042965497318566629, guid: f577702190186044d9a1d96f02539551, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
+    - target: {fileID: 4118614346307161483, guid: f577702190186044d9a1d96f02539551, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8461561494050079083, guid: f577702190186044d9a1d96f02539551, type: 3}
       propertyPath: trap

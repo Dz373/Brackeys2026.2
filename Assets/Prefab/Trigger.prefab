@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94cc4f0ae2e69849978e7f81d5b2851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggered: 0
   trap: {fileID: 0}
 --- !u!61 &6042965497318566629
 BoxCollider2D:
@@ -59,10 +60,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 119
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
