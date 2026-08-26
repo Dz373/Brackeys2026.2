@@ -1,11 +1,16 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
     public float moveSpeed = 5;
     public float jumpPower = 5;
 
+    public Vector2 respawnPoint;
+
     [SerializeField] private Rigidbody2D rb;
+
+    private void Start() {
+        respawnPoint = transform.position;
+    }
 
     private void Update() {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -15,5 +20,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             rb.AddForce(new Vector2(0, jumpPower));
         }
+
+
+        if (transform.position.y <= -6) {
+            Respawn();
+        }
+    }
+
+    public void Respawn() {
+        transform.position = respawnPoint;
     }
 }
