@@ -4,6 +4,17 @@ public class Trap : MonoBehaviour
 {
     public TrapType type;
 
+    //Disappear Trap
+    [HideInInspector] public float delay;
+
+    //Move Trap
+    [HideInInspector] public Vector2 moveTarget;
+    [HideInInspector] public float moveSpeed;
+
+    //Rotate Trap
+    [HideInInspector] public float rotateAngle;
+    [HideInInspector] public float rotateSpeed;
+
     private Vector2 startPos;
 
     private void Start() {

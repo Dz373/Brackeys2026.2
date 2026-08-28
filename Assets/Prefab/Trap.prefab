@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1901792998980458494}
   - component: {fileID: 8997328575908006086}
   m_Layer: 6
-  m_Name: Pit Trap
+  m_Name: Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ab8a78b0ff4d04c9d7b241f830f2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  delay: 0
+  moveTarget: {x: 0, y: 0}
+  moveSpeed: 0
+  rotateAngle: 0
+  rotateSpeed: 0
 --- !u!61 &1657971388176594415
 BoxCollider2D:
   m_ObjectHideFlags: 0
