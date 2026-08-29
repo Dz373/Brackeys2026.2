@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Trap : MonoBehaviour
 {
@@ -16,14 +17,17 @@ public class Trap : MonoBehaviour
     [HideInInspector] public float rotateSpeed;
 
     private Vector2 startPos;
+    private Quaternion startRot;
 
     private void Start() {
         startPos = transform.position;
+        startRot = transform.rotation;
     }
 
     public void ResetTrap() {
         gameObject.SetActive(true);
         transform.position = startPos;
+        transform.rotation = startRot;
     }
 
     public void TriggerTrap() {
@@ -32,8 +36,31 @@ public class Trap : MonoBehaviour
                 gameObject.SetActive(false);
                 break;
 
+            case TrapType.move:
+                StartCoroutine(MoveTrap());
+                break;
 
+            case TrapType.rotate:
+                StartCoroutine(RotateTrap());
+                break;
         }
+    }
+
+    private IEnumerator MoveTrap() {
+        while (Vector2.Distance(transform.position, moveTarget) > 0.01f) {
+            transform.position = Vector2.Lerp(transform.position, moveTarget, moveSpeed * Time.deltaTime); ;
+            yield return null;
+        }
+        transform.position = moveTarget;
+    }
+
+    private IEnumerator RotateTrap() {
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0,0,rotateAngle));
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.01f) {
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+            yield return null;
+        }
+        transform.rotation = targetRotation;
     }
 
     public enum TrapType {
